@@ -13,5 +13,8 @@
             "Limiter\\": "src/Limiter/",
             "GPBMetadata\\": "src/GPBMetadata/"
         }
+    },
+    "require": {
+        "phpunit/phpunit": "^7.5"
     }
 }
