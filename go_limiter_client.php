@@ -21,18 +21,6 @@
 
 require dirname(__FILE__).'/vendor/autoload.php';
 
-//AcquireReply.php  AcquireRequest.php  CreateReply.php  CreateRequest.php  GetRateReply.php  GetRateRequest.php  RateLimiterClient.php  TryAcquireReply.php  TryAcquireRequest.php
-@include_once dirname(__FILE__).'/Limiter/RateLimiterClient.php';
-@include_once dirname(__FILE__).'/Limiter/AcquireReply.php';
-@include_once dirname(__FILE__).'/Limiter/AcquireRequest.php';
-@include_once dirname(__FILE__).'/Limiter/CreateReply.php';
-@include_once dirname(__FILE__).'/Limiter/CreateRequest.php';
-@include_once dirname(__FILE__).'/Limiter/GetRateReply.php';
-@include_once dirname(__FILE__).'/Limiter/GetRateRequest.php';
-@include_once dirname(__FILE__).'/Limiter/TryAcquireReply.php';
-@include_once dirname(__FILE__).'/Limiter/TryAcquireRequest.php';
-@include_once dirname(__FILE__).'/GPBMetadata/RateLimiter.php';
-
 function greet($alias)
 {
     $client = new Limiter\RateLimiterClient('localhost:50053', [
@@ -42,8 +30,7 @@ function greet($alias)
     $request->setAlias($alias);
     list($reply, $status) = $client->GetRate($request)->wait();
     $mes['ret'] = $reply->getRet();
-
-   $mes['permits'] = $reply->getPermits();
+    $mes['permits'] = $reply->getPermits();
 
     return $mes;
 }
