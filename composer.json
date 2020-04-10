@@ -1,0 +1,17 @@
+{
+    "name": "rhinonet/golimiter",
+    "description": "限流 gRPC Client",
+    "type": "library",
+    "require-dev": {
+        "grpc/grpc": "dev-master",
+        "google/protobuf": "3.4.0"
+    },
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Limiter\\": "src/Limiter/",
+            "GPBMetadata\\": "src/GPBMetadata/"
+        }
+    }
+}
