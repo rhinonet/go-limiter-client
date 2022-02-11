@@ -4,7 +4,7 @@
     "type": "library",
     "require-dev": {
         "grpc/grpc": "dev-master",
-        "google/protobuf": "3.4.0"
+        "google/protobuf": "3.15.0"
     },
     "license": "MIT",
     "minimum-stability": "dev",
